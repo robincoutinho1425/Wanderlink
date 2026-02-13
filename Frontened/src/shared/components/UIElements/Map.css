@@ -1,0 +1,10 @@
+.map {
+  width: 100%;
+  
+  border: 1px solid #ccc;
+  /* Optional: Just for visualization */
+}
+
+.map:active {
+  cursor: grabbing;
+}

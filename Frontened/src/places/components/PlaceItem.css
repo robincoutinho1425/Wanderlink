@@ -1,0 +1,246 @@
+/* Base Styles */
+.place-item {
+  margin: 1.5rem 0;
+  perspective: 1000px; /* For potential 3D effects */
+  transition: transform 0.3s ease;
+}
+
+.place-item:hover {
+  transform: scale(1.02); /* Subtle hover effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.place-item__content {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+/* Image Styles */
+.place-item__image {
+  width: 100%;
+  height: 15rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.place-item__image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  z-index: 1;
+}
+
+.place-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.place-item__image:hover img {
+  transform: scale(1.05);
+}
+
+/* Information Styles */
+.place-item__info {
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+}
+
+.place-item__info h2 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.place-item__info p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Rating Styles */
+.rating-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.rating-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.rating-button.like {
+  background-color: #e6f3e6;
+  border-color: #4ade4a;
+  color: #2c7a2c;
+  font-size: 12px;
+}
+
+.rating-button.like:hover:not(:disabled) {
+  background-color: #4ade4a;
+  color: white;
+}
+
+.rating-button.like.active {
+  background-color: #4ade4a;
+  color: white;
+  font-size: 12px;
+}
+
+.rating-button.dislike {
+  background-color: #f9e6e6;
+  border-color: #ff4a4a;
+  color: #a12020;
+}
+
+.rating-button.dislike:hover:not(:disabled) {
+  background-color: #ff4a4a;
+  color: white;
+}
+
+.rating-button.dislike.active {
+  background-color: #ff4a4a;
+  color: white;
+}
+
+.rating-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Actions Styles */
+.place-item__actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f1f5f9;
+  border-top: 1px solid #e2e8f0;
+}
+
+.place-item__actions button {
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.place-item__actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal and Map Styles */
+.map-container {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.place-item__modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .place-item__image {
+    height: 20rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .place-item__actions {
+    flex-direction: column;
+  }
+
+  .place-item__actions button {
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+}
+.comments-section {
+  margin-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 1rem;
+}
+
+.comment-input-container {
+  display: flex;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.comment-input {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-right: 0.5rem;
+}
+
+.comment-submit-btn {
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+.comment {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.comment-username {
+  font-weight: bold;
+}
+
+.comment-date {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.place-item__ratings {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-delete-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
